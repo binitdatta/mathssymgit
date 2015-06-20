@@ -1,0 +1,75 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Contact Us!!</h1>
+    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+  </div>
+</header>
+
+<div class="container" ng-controller='ContactUsCtrl'>
+        <h1>Contact US</h1>
+        <form role='form'>
+            <div class='form-group'>
+                <div class="input-group">
+                	<div class="blockDiv questionDiv">
+	                	<div class="blockDiv labelDiv title"></div>
+		                	<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">First Name</div>
+								<div class="blockDiv textDiv">
+									<input ng-model="firstname" width="150">
+								</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Last Name</div>
+								<div class="blockDiv textDiv">
+									<input ng-model="lastname" width="150">
+								</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">User Name</div>
+								<div class="blockDiv textDiv">
+	 									<input ng-model="username" width="150">
+								 </div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Email Id</div>
+								<div class="blockDiv textDiv">
+									<input width="150" ng-model="emailid">
+								</div>
+							</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv">Remarks</div>
+							<div class="blockDiv textDiv">
+								<textarea rows="10" cols="100" class='form-control' ng-model="remarks"></textarea>
+							</div>
+						</div>
+					</div>
+					
+						<div class="blockDiv rowDiv">	
+							<div class="blockDiv labelDiv">
+								<button ng-click='submit()' class='btn btn-default'>
+									<strong>Submit</strong>
+								</button>
+							</div>							
+						</div>
+
+					</div>
+
+                </div>
+            </div>
+        </form>
+        <br/>
+	 </div>
+</div>
+
+
+
+<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>

@@ -1,0 +1,88 @@
+																				body {
+	font-family: 'HelveticaNeue-Light', 'Lucida Grande';
+	#background-color: grey;
+	#background-color: skyblue;
+	#background-color: cyan;
+	#background-color: black;
+	#background-color: yellow;
+	background-color: darkgrey;
+
+
+}
+.blockDiv {
+	float: left;
+	display: block;
+	position: relative;		
+}
+.rowDiv {
+	width: 100%;
+	margin: 4px 0;
+}
+.labelDiv {
+	width: 100px;
+	font-family: 'HelveticaNeue';
+}
+
+.label1Div {
+	width: 200px;
+	font-family: 'HelveticaNeue';
+}
+
+.label2Div {
+	width: 400px;
+	font-family: 'HelveticaNeue';
+}
+.title {
+	font-family: 'HelveticaNeue-Light';
+	font-size: 24px;
+	margin: 0 0 10px 0;
+}
+.textDiv {
+
+}
+.questionDiv {
+	width: 100%;
+	border: solid 1px #ddd;
+	border-radius: 6px;
+	padding: 4px 10px;
+	margin: 6px 0;
+}
+.answerDiv {
+	width: 100%;
+	border: solid 1px #ddd;
+	border-radius: 6px;
+	padding: 4px 10px;
+}
+.col1 {
+	width: 60px;
+}
+.col2 {
+	width: 60px;
+}
+.col3 {
+	width: 60px;
+}
+
+input {
+	padding: 2px 4px;
+	display: block;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+input:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+button:focus {
+	-webkit-outline: none !important;
+	outline: none !important;
+}

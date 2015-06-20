@@ -1,0 +1,147 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>'Answer the questions below!</h1>
+    <p class="lead">The Problems can be word problems or Algebra</p>
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+  </div>
+</header>
+
+
+    <div  class='container' ng-controller='TakeTestCtrl'>
+        <h1>Solve Math Problems</h1>
+        <form role='form'>
+            <div class='form-group'>
+                <div class="input-group">
+                	<div class="blockDiv questionDiv">
+	                	<div class="blockDiv labelDiv title">Question</div>
+		                
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Basic Fact</div>
+								<div class="blockDiv textDiv">
+									<input ng-model="basicfact" width="100" {{basicfact}}>
+									<input type="hidden" name="_questionid" ng-model="_questionid" value={{_questionid}}>
+									<input type="hidden" name="userid" ng-model="_questionid" value={{userid}}>
+									<input type="hidden" name="useremail" ng-model="_questionid" value={{useremail}}>
+									<input type="hidden" name="username" ng-model="_questionid" value={{username}}>
+									<input type="hidden" name="grade" ng-model="grade" value={{grade}}>
+									<input type="hidden" name="explanation" ng-model="explanation" value={{explanation}}>
+								</div>
+							</div>
+						
+							<!--<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Basic Fact</div>
+								<div class="blockDiv textDiv">
+									<input ng-model="_id" width="100" {{_id}}>
+								</div>
+							</div> -->
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Part</div>
+								<div class="blockDiv textDiv">
+									<input width="2" ng-model="part" {{part}}>
+								</div>
+							</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv">Question</div>
+							<div class="blockDiv textDiv">
+								<textarea rows="10" cols="120" class='form-control' ng-model="problem" {{problem}} ></textarea>
+							</div>
+						</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv"><strong>Answer A. : {{answerA}} </strong></div>
+							<div class="blockDiv textDiv">
+								<input type="radio" ng-model="answer"  value="{{answerA}}" name="answer">
+							</div>
+						</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv"><strong>Answer B. : {{answerB}}</strong></div>
+							<div class="blockDiv textDiv">
+								<input type="radio" ng-model="answer"  value="{{answerB}}" name="answer">
+							</div>
+						</div>
+							<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv"><strong>Answer C. : {{answerC}}</strong></div>
+							<div class="blockDiv textDiv">
+								<input type="radio" ng-model="answer"  value="{{answerC}}" name="answer">
+							</div>
+						</div>
+							<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv"><strong>Answer D. : {{answerD}}</strong></div>
+							<div class="blockDiv textDiv">
+								<input type="radio" ng-model="answer"  value="{{answerD}}" name="answer">
+							</div>
+						</div>
+					</div>
+			
+					</div>
+									<!-- Dependent Question -->
+					<div id="dependentquestion" style="display:block">
+						<div  class="blockDiv questionDiv">
+							<div class="blockDiv label1Div title">Dependent Question</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Part</div>
+								<div class="blockDiv textDiv">
+									<input width="2" ng-model="dependentquestionpart" {{dependentquestionpart}} ></div>
+								</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Dependent Question</div>
+								<div class="blockDiv textDiv">
+									<textarea rows="10" cols="120" class='form-control'		ng-model="dependentquestionproblem" {{dependentquestionproblem}} ></textarea>
+								</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv"><strong>Answer A. : {{dependentAnswerA}}</strong></div>
+								<div class="blockDiv textDiv">
+									<input type="radio" ng-model="dependentanswer"  value="{{dependentAnswerA}}" name="dependentanswer">
+								</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv"><strong>Answer B. : {{dependentAnswerB}}</strong></div>
+								<div class="blockDiv textDiv">
+									<input type="radio" ng-model="dependentanswer"  value="{{dependentAnswerB}}" name="dependentanswer">
+								</div>
+							</div>
+								<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv"><strong>Answer C. : {{dependentAnswerC}}</strong></div>
+								<div class="blockDiv textDiv">
+									<input type="radio" ng-model="dependentanswer"  value="{{dependentAnswerC}}" name="dependentanswer">
+								</div>
+							</div>
+								<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv"><strong>Answer D. : {{dependentAnswerD}}</strong></div>
+								<div class="blockDiv textDiv">
+									<input type="radio" ng-model="dependentanswer"  value="{{dependentAnswerD}}" name="dependentanswer">
+								</div>
+						</div>
+						</div>
+			
+					
+						</div>
+					</div>
+					<!-- End Dependent Question -->
+				
+							<div class="blockDiv rowDiv">	
+							<div class="blockDiv labelDiv">
+								<button ng-click='submit()' class='btn btn-default'>
+									<strong>Submit</strong>
+								</button>
+							</div>							
+			
+						</div>
+                </div>
+            </div>
+        </form>
+        <br/>
+  
+    </div>
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>

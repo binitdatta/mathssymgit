@@ -1,0 +1,220 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>'Enter a New Mathematics Problem!</h1>
+    <p class="lead">The Problems can be word problems or Algebra</p>
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+  </div>
+</header>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Features:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
+        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+    <div  class='container' ng-controller='AddQuestionCtrl'>
+        <h1>Add Math Problems</h1>
+        <form role='form'>
+            <div class='form-group'>
+                <div class="input-group">
+                	<div class="blockDiv questionDiv">
+	                	<div class="blockDiv labelDiv title">Question</div>
+		                	<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">ID</div>
+								<div class="blockDiv textDiv">
+									<input ng-model="id" width="100">
+								</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Basic Fact</div>
+								<div class="blockDiv textDiv">
+									<input ng-model="basicfact" width="100">
+								</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Type</div>
+								<div class="blockDiv textDiv">
+									<input ng-model="questiontype" width="10">
+								</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Part</div>
+								<div class="blockDiv textDiv">
+									<input width="2" ng-model="part">
+								</div>
+							</div>
+						<div class="blockDiv rowDiv"><div class="blockDiv labelDiv">Question</div><div class="blockDiv textDiv"><textarea rows="4" cols="50" class='form-control' ng-model="problem"></textarea></div></div>
+					</div>
+					
+                	<div class="blockDiv answerDiv">
+    	            	<div class="blockDiv labelDiv title">Answers</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv">&nbsp;</div>
+							<div class="blockDiv labelDiv col1">ID</div>
+							<div class="blockDiv labelDiv col2">Type</div>
+							<div class="blockDiv labelDiv col3">Answer</div>
+						</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv">
+								Answer A
+							</div>
+							<div class="blockDiv textDiv col1">
+								<input ng-model="answersfirstanswerid" width="100">								
+							</div>
+							<div class="blockDiv textDiv col2">
+								<input ng-model="answersfirstanswertype" width="100">								
+							</div>
+							<div class="blockDiv textDiv col3">
+								<input ng-model="answersfirstanswer" width="100">								
+							</div>
+						</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv">Answer B</div><div class="blockDiv textDiv col1"><input type="text" ng-model="answerssecondanswerid" width="5"></div><div class="blockDiv textDiv col2"><input type="text" ng-model="answerssecondanswertype" width="5"></div><div class="blockDiv textDiv col3"><input  ng-model="answerssecondanswer" width="25"></div>
+						</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv">Answer C</div><div class="blockDiv textDiv col1"><input  ng-model="answersthirdanswerid" width="5"></div><div class="blockDiv textDiv col2"><input  ng-model="answersthirdanswertype" width="5"></div><div class="blockDiv textDiv col3"><input  ng-model="answersthirdanswer" width="25"></div>
+						</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv">Answer D</div><div class="blockDiv textDiv col1"><input  ng-model="answersforthanswerid" width="5"></div><div class="blockDiv textDiv col2"><input  ng-model="answersforthanswertype" width="5"></div><div class="blockDiv textDiv col3"><input  ng-model="answersforthanswer" width="25"></div>
+						</div>
+						<div class="blockDiv rowDiv">
+							<div class="blockDiv labelDiv">Explanation</div><div class="blockDiv textDiv"><textarea rows="4" cols="50" class='form-control' ng-model="explanation"></textarea></div>
+						</div>
+
+						<div class="blockDiv rowDiv">	
+							<div class="blockDiv labelDiv"><button ng-click='addAnswers()' class='btn btn-default'><strong>Add Answers</strong></button></div>							
+							<div class="blockDiv labelDiv">&nbsp;</div>
+							<div class="blockDiv labelDiv">
+							<button ng-click='showDependentQuestionsSubForm()' class='btn btn-default'><strong>Show Dependent Question</strong></button></div>
+							<div class="blockDiv labelDiv">&nbsp;</div>
+							<div class="blockDiv labelDiv">
+							<button ng-click='hideDependentQuestionsSubForm()' class='btn btn-default'><strong>Hide Dependent Question</strong></button>
+							</div>
+							<div class="blockDiv labelDiv">&nbsp;</div>
+							<div class="blockDiv labelDiv"><button ng-click='addQuestions()' class='btn btn-default'><strong>Add Question</strong></button></div>
+						</div>
+
+					</div>
+
+									<!-- Dependent Question -->
+					<div id="dependentquestion" style="display:none">
+						<div  class="blockDiv questionDiv">
+							<div class="blockDiv label1Div title">Dependent Question</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Type</div>
+								<div class="blockDiv textDiv">
+									<input ng-model="dependentquestion.type" width="10">
+								</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Part</div>
+								<div class="blockDiv textDiv">
+									<input width="2" ng-model="dependentquestion.part"></div>
+								</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Dependent Question</div>
+								<div class="blockDiv textDiv">
+									<textarea rows="4" cols="50" class='form-control'		ng-model="dependentquestion.problem"></textarea>
+								</div>
+							</div>
+						</div>
+
+						<div class="blockDiv answerDiv">
+							<div class="blockDiv label2Div title">Dependent Question Answers</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">&nbsp;</div><div class="blockDiv labelDiv col1">ID</div><div class="blockDiv labelDiv col2">Type</div><div class="blockDiv labelDiv col3">Answer</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Answer A</div><div class="blockDiv textDiv col1">
+								<input  ng-model="dependentquestionanswersfirstanswerid" width="5">
+								</div>
+								<div class="blockDiv textDiv col2">
+									<input  ng-model="dependentquestionanswersfirstanswertype" width="5">
+									</div>
+									<div class="blockDiv textDiv col3">
+										<input  ng-model="dependentquestionanswersfirstanswer" width="25">
+									</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Answer B</div><div class="blockDiv textDiv col1">
+								<input  ng-model="dependentquestionanswerssecondanswerid" width="5">
+								</div>
+								<div class="blockDiv textDiv col2">
+									<input  ng-model="dependentquestionsecondanswertype" width="5">
+									</div>
+									<div class="blockDiv textDiv col3">
+										<input  ng-model="dependentquestionsecondanswer" width="25">
+									</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Answer C</div><div class="blockDiv textDiv col1">
+								<input  ng-model="dependentquestionthirdanswerid" width="5">
+								</div>
+								<div class="blockDiv textDiv col2">
+									<input  ng-model="dependentquestionthirdanswertype" width="5">
+									</div>
+									<div class="blockDiv textDiv col3">
+										<input  ng-model="dependentquestionthirdanswer" width="25">
+									</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Answer D</div><div class="blockDiv textDiv col1">
+								<input  ng-model="dependentquestionforthanswerid" width="5">
+								</div>
+								<div class="blockDiv textDiv col2">
+									<input  ng-model="dependentquestionforthanswertype" width="5">
+									</div>
+									<div class="blockDiv textDiv col3">
+										<input  ng-model="dependentquestionforthanswer" width="25">
+									</div>
+							</div>
+							<div class="blockDiv rowDiv">
+								<div class="blockDiv labelDiv">Explanation</div><div class="blockDiv textDiv"><textarea rows="4" cols="50" class='form-control' ng-model="dependentquestion.explanation"></textarea></div>
+							</div>
+
+							<div class="blockDiv rowDiv">	
+								<div class="blockDiv labelDiv">
+									<button ng-click='addDependentQuestions()' class='btn btn-default'><strong>Add Dependent Question</strong></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Dependent Question -->
+
+                </div>
+            </div>
+        </form>
+        <br/>
+        <ul class='list-group'>
+            <li ng-repeat='question in exam_questions' class='list-group-item'>
+                <strong>@{{ question.type }}</strong>
+                <strong>@{{ question.basic_fact }}</strong>
+                <strong>@{{ question.part }}</strong>
+                <span>{{ question.problem }}</span>
+                <span>{{ question.explanation }}</span>
+                <ul ng-repeat="answerrow in question.answers">
+                    <li>{{answerrow.type}} : {{answerrow.answer}}</li>
+                </ul>
+				 <ul ng-repeat="dependentrow in question.dependentquestions">
+                    <li>{{dependentrow.type}} : {{dependentrow.problem}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>
